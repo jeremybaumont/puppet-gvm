@@ -6,9 +6,7 @@ class gvm(
   # get the download URI
   $download_uri = "https://raw.githubusercontent.com/moovweb/gvm/${version}/binscripts/gvm-installer"
 
-  $install_command = join([
-    "bash <<(curl -s -S -L ${download_uri})"
-  ], ' && ')
+  $install_command = "bash < <(curl -s -S -L ${download_uri})"
 
   exec {
     "install gvm v${version}":
