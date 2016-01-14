@@ -13,6 +13,6 @@ class gvm(
   exec {
     "install gvm v${version}":
       command => $install_command,
-      #unless  => "test -x ~/.gvm && gvm version| grep '\\bv${version}\\b'",
+      unless  => "test -x ~/.gvm && gvm version| grep '\\bv${version}\\b'",
       }
 }
